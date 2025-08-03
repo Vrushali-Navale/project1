@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accessories Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+    background: linear-gradient(270deg, #fbecf1, #e5fcf3, #efdee7, #dbf0e1, #d1bfd6, #f1d0e4, #d2f0f1);
+    background-size: 600% 600%;
+    animation: backgroundShift 20s ease infinite;
+    color: #333;
+    line-height: 1.6;
+    }
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: #4a90e2;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      color: #222;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+    .product-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+      display: block;
+    }
+    .product-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+    }
+    .product-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+    .product-content p {
+      flex: 1;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #666;
+    }
+    .price {
+      font-weight: bold;
+      color: #e94e77;
+      font-size: 1.1rem;
+    }
+    footer {
+      background-color: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 50px;
+    }
+   .button-group {
+      display: flex;
+      gap: 10px; /* space between buttons */
+    }
+
+    .buy-button,
+    .add-to-cart {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      /*text-transform: uppercase; */
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-button {
+      background-color: #e94e77; /* green */
+      color: white;
+    }
+
+   .buy-button:hover {
+      background-color: #bb6707;
+    }
+
+   .add-to-cart {
+     background-color: #1c75db;
+     display: flex;
+     align-items: center;
+     gap: 6px;
+     color: white;
+    }
+
+    .add-to-cart:hover {
+      background-color: #4a90e2;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="history.back()"><img src="img/backarrow.webp" alt="" height="20px" width="20px"></button>
+
+
+  <div class="container">
+    <h2>Featured Accessories</h2>
+    <div class="products">
+      <!-- Sixteen cards for example; ensure width and height attributes -->
+       <div class="product-card">
+        <img src="img/fw5.jpg" alt="Up Sneaker Shoes" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Up Sneaker Shoes </h3>
+          <div class="price"> ₹1,194</div> 
+          <div class="button-group">  
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/fw.jpg" alt=" Sneaker Shoes" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3> Sneaker Shoes</h3>
+          <div class="price"> ₹1,194</div> 
+          <div class="button-group">  
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/fw7.jpg" alt="Sports Running Shoes" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Sports Running Shoes</h3>
+          <div class="price"> ₹1,499</div>
+          <div class="button-group">  
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/fw2.jpg" alt="DUSK N DAZZLING Vegan Leather" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>DUSK N DAZZLING Vegan Leather</h3>
+           <div class="price"> ₹999</div> 
+          <div class="button-group">  
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/fw1.jpg" alt="Leather Latest Loafers" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Leather Latest Loafers</h3>
+          <div class="price">₹1,699</div>
+          <div class="button-group">  
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+       <div class="product-card">
+        <img src="img/fw3.jpg" alt="Knoos Men's Loafer" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3>Knoos Men's Loafer</h3>
+          <div class="price"> ₹649</div>
+          <div class="button-group">  
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/fw4.jpg" alt="Hx London LEATHER BROGUE" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Hx London LEATHER BROGUE</h3>
+          <div class="price">₹26,995</div>
+          <div class="button-group">  
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/fw6.jpg" alt="STANPHORD Mens Lumora Sneaker" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>STANPHORD Mens Lumora Sneaker</h3>
+          <div class="price">₹899</div>
+          <div class="button-group">  
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>© Your Brand 2025</footer>
+<script>
+  // Add to Cart buttons
+  const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.product-card');
+      const img = card.querySelector('img').src;
+      const title = card.querySelector('h3').innerText;
+      const price = card.querySelector('.price').innerText;
+
+      // Get existing cart from localStorage or start new
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Push current item
+      cart.push({ img, title, price });
+
+      // Save back to localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      // Optional: Notify user
+      alert(`Added "${title}" to cart!`);
+
+      // Go to cart.html
+      window.location.href = 'cart.html';
+    });
+  });
+</script>
+
+</body>
+</html>

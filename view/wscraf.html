@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accessories Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+    background: linear-gradient(270deg, #fbecf1, #e5fcf3, #efdee7, #dbf0e1, #d1bfd6, #f1d0e4, #d2f0f1);
+    background-size: 600% 600%;
+    animation: backgroundShift 20s ease infinite;
+    color: #333;
+    line-height: 1.6;
+    }
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: #4a90e2;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      color: #222;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+    .product-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+      display: block;
+    }
+    .product-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+    }
+    .product-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+    .product-content p {
+      flex: 1;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #666;
+    }
+    .price {
+      font-weight: bold;
+      color: #e94e77;
+      font-size: 1.1rem;
+    }
+    footer {
+      background-color: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 50px;
+    }
+      .button-group {
+      display: flex;
+      gap: 10px; /* space between buttons */
+    }
+
+    .buy-button,
+    .add-to-cart {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      /*text-transform: uppercase; */
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-button {
+      background-color: #e94e77; /* green */
+      color: white;
+    }
+
+   .buy-button:hover {
+      background-color: #bb6707;
+    }
+
+   .add-to-cart {
+     background-color: #1c75db;
+     display: flex;
+     align-items: center;
+     gap: 6px;
+     color: white;
+    }
+
+    .add-to-cart:hover {
+      background-color: #4a90e2;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="history.back()"><img src="img/backarrow.webp" alt="" height="20px" width="20px"></button>
+
+  <div class="container">
+    <h2>Featured Accessories</h2>
+    <div class="products">
+      <!-- Sixteen cards for example; ensure width and height attributes -->
+      <div class="product-card">
+        <img src="img/sc.jpg" alt="Silk Stoles" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3>Silk Stoles </h3>
+          <div class="price"> ₹899</div> <div class="button-group">
+            <button class="buy-button">Buy</button>
+            </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/sc1.jpg" alt="Bandana Face Covering" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Bandana Face Covering</h3>
+          <div class="price"> ₹139</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/sc2.jpg" alt="Headscarves" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Headscarves</h3>
+          <div class="price"> ₹899</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/sc3.jpg" alt="Collar Scarf " loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Collar Scarf  </h3>
+          <div class="price">₹225</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/sc4.jpg" alt="Ciormis Chiffon Shawl" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Ciormis Chiffon Shawl</h3>
+          <div class="price">₹3,371.20</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/sc5.jpg" alt="Pashmina Shawls" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Pashmina Shawls</h3>
+          <div class="price">₹6,691</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/SC6.jpg" alt="TecoKart Stole" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>TecoKart Stole</h3>
+          <div class="price"> ₹368</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/sc7.jpg" alt="Scarfs" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Scarfs</h3>
+          <div class="price">₹3,158.09</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/sc8.jpg" alt="Kashmiri Woven Design Stole" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Kashmiri Woven Design Stole </h3>
+          <div class="price">₹279</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/sc9.jpg" alt="JAMAWAR Stole & Scarf
+" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>JAMAWAR Stole & Scarf</h3>
+          <div class="price">₹299</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/sc10.jpg" alt="ure Cashmilon Wool Stole" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>ure Cashmilon Wool Stole</h3>
+          <div class="price">₹1,499</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/sc11.jpg" alt=" Lightweight Shawl" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3> Lightweight Shawl</h3>
+          <div class="price">₹2,374</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+         </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/sc12.jpg" alt=" Kashmiri Aari Embroidery Stole" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3> Kashmiri Aari Embroidery Stole</h3>
+          <div class="price"> ₹1,195</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+\          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/sc13.jpg" alt=" Kashmiri Mughal Garden Stole" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3> Kashmiri Mughal Garden Stole</h3>
+          <div class="price">₹1,394</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/sc14.jpg" alt=" Georgette Ombre Scarf" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3> Georgette Ombre Scarf </h3>
+          <div class="price">₹459</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/sc15.jpg" alt=" Faux Fur Woolen Stole" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3> Faux Fur Woolen Stole</h3>
+          <div class="price"> ₹399</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>© Your Brand 2025</footer>
+<script>
+  // Select Buy Now buttons first
+  const buyButtons = document.querySelectorAll('.buy-button');
+
+  buyButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.product-card');
+      const img = card.querySelector('img').src;
+      const title = card.querySelector('h3').innerText;
+      const price = card.querySelector('.price').innerText;
+
+      // Store Buy Now items separately
+      const existingOrderItems = JSON.parse(localStorage.getItem('orderItems')) || [];
+
+      existingOrderItems.push({ img, title, price, quantity: 1 });
+
+      localStorage.setItem('orderItems', JSON.stringify(existingOrderItems));
+
+      // Go to order.html
+      window.location.href = 'order.html';
+    });
+  });
+
+  // Add to Cart buttons
+  const buttons = document.querySelectorAll('.add-to-cart');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.product-card');
+      const img = card.querySelector('img').src;
+      const title = card.querySelector('h3').innerText;
+      const price = card.querySelector('.price').innerText;
+
+      // Retrieve existing cart or start a new one
+      const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Add new item
+      existingCart.push({ img, title, price });
+
+      // Save back to localStorage
+      localStorage.setItem('cart', JSON.stringify(existingCart));
+
+      // Redirect to cart.html
+      window.location.href = 'cart.html';
+    });
+  });
+</script>
+</body>
+</html>

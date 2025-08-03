@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Accessories Cart</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    /* GLOBAL STYLES */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+    h1{
+      font-family: 'Monotype Corsiva';
+      color: #2c3e50;
+      text-transform: 'sentence case';
+      letter-spacing: 2px;
+    }
+
+    /* Specific style for h1 */
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #cce4ff;
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    /* PRODUCT CARD */
+    .product-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      height: 180px;
+      margin-bottom: 15px;
+    }
+
+    .product-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #222;
+      text-align: center;
+    }
+
+    .product-card p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #666;
+      text-align: center;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #e94e77;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px; /* space between buttons */
+    }
+
+    .buy-button,
+    .add-to-cart {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      /*text-transform: uppercase; */
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-button {
+      background-color: #e94e77; /* green */
+      color: white;
+    }
+
+   .buy-button:hover {
+      background-color: #bb6707;
+    }
+
+   .add-to-cart {
+     background-color: #1c75db;
+     display: flex;
+     align-items: center;
+     gap: 6px;
+     color: white;
+    }
+
+    .add-to-cart:hover {
+      background-color: #4a90e2;
+    }
+
+
+
+    /* SIDEBAR CART */
+    .sidebar {
+      background-color: #eee;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .head {
+      background-color: #4a90e2;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .cart-item {
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      margin: 10px 0;
+      border-bottom: 1px solid #aaa;
+      border-radius: 5px;
+    }
+
+    .row-img {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #4a90e2;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .rowimg {
+      max-width: 45px;
+      max-height: 45px;
+      border-radius: 50%;
+    }
+
+    .fa-trash:hover {
+      color: red;
+      cursor: pointer;
+    }
+
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 10px;
+      margin-top: 10px;
+      border-top: 1px solid #aaa;
+    }
+
+    /* MARQUEE */
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: #4a90e2;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 10px 0;
+    }
+
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 10s linear infinite;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    footer {
+      background-color: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Accessorize Your Style</h1>
+    <nav>
+      <a href="Home.html">Home</a>
+      <a href="Men.html">Men</a>
+      <a href="Women.html">Women</a>
+      <a href="main.html">Branded Jewellery</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="order.html">Order</a>
+    </nav>
+  </header>
+
+  <div class="marquee"><span>Big Sale Today! Limited Time Offer on All Accessories!</span></div>
+  <h1 style="text-align: center; padding-bottom: 50px;padding-top: 50px;">Featured Accessories</h1>
+    <div class="products">
+    <!-- Example product card -->
+    <div class="product-card">
+       <img Id="product1" src="img/ring.png" alt="Diamond Ring" />
+       <h3>Diamond Ring</h3>
+       <p>American Diamond Silver ring.</p>
+      <div class="price">$999.99</div>
+      <div style="padding-top: 30px;"class="button-group">
+        <button class="buy-button" onclick="buyNow(0)">Buy</button>
+      
+     </div>
+
+    </div>
+
+
+    <div class="product-card">
+      <img Id="product2" src="img/watch.jpg" alt="Watch" />
+      <h3>Smart Watch</h3>
+      <p>Noise new macro smart watch.</p>
+      <div style="padding-bottom: 40px;" class="price">$799.99</div>
+      <div class="button-group">
+        <button class="buy-button" onclick="buyNow(1)">Buy</button>
+      
+      </div>
+    </div>
+        <div class="product-card">
+      <img Id="product3" src="img/eye.jpg" alt="Sunglasses" />
+      <h3>Sunglasses</h3>
+      <p>Vault sunglasses product shoot.</p>
+      <div style=" padding-bottom: 45px;"class="price">$458.00</div>
+      <div class="button-group">
+        <button class="buy-button" onclick="buyNow(2)">Buy</button>
+        
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img Id="product4" src="img/braclet.avif" alt="Bracelet" />
+      <h3>New Featured Bracelet</h3>
+      <p>Atamana Rose Gold Plated & Green American Diamond Studded Bangle Link Bracelet.</p>
+      <div class="price">$890.99</div>
+      <div class="button-group">
+        <button class="buy-button" onclick="buyNow(3)">Buy</button>
+       
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img Id="product5" src="img/neckles.jpeg" alt="Elegant Necklace" />
+      <h3>Elegant Necklace</h3>
+      <p>Gold plated necklace with pearl stones.</p>
+      <div style=" padding-bottom: 30px;"class="price">$299.99</div>
+      <div class="button-group">
+        <button class="buy-button" onclick="buyNow(4)">Buy</button>
+       
+      </div>
+    </div>
+    <div class="product-card">
+      <img Id="product6" src="img/earing.jpeg" alt="Stylish Earrings" />
+      <h3>Stylish Earrings</h3>
+      <p>Silver and diamond combination earrings.</p>
+      <div class="price">$199.99</div>
+      <div class="button-group">
+        <button class="buy-button" onclick="buyNow(5)">Buy</button>
+       
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img Id="product7" src="img/cap.jpeg" alt="Fashion Hat" />
+      <h3>Fashion Hat</h3>
+      <p>Trendy summer hat for casual outings.</p>
+      <div class="price">$49.99</div>
+      <div class="button-group">
+        <button class="buy-button" onclick="buyNow(6)">Buy</button>
+        
+        </button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img Id="product8" src="img/silk.jpeg" alt="Silk Scarf" />
+      <h3>Silk Scarf</h3>
+      <p>Luxurious silk scarf with vibrant colors.</p>
+      <div class="price">$69.99</div>
+      <div class="button-group">
+        <button class="buy-button" onclick="buyNow(7)">Buy</button>
+       
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img Id="product9" src="img/belt.webp" alt="Leather Belt" />
+      <h3>Leather Belt</h3>
+      <p>Classic brown leather belt for men.</p>
+      <div class="price">$59.99</div>
+      <div class="button-group">
+        <button class="buy-button" onclick="buyNow(8)">Buy</button>
+
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img Id="product10" src="img/gloves.webp" alt="Winter Gloves" />
+      <h3>Winter Gloves</h3>
+      <p>Warm and stylish wool gloves.</p>
+      <div style=" padding-bottom: 25px;"class="price">$39.99</div>
+      <div class="button-group">
+        <button class="buy-button" onclick="buyNow(9)">Buy</button>
+
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img Id="product11" src="img/wallet.webp" alt="Leather Wallet" />
+      <h3>Leather Wallet</h3>
+      <p>Compact and durable wallet.</p>
+      <div style=" padding-bottom: 45px;"class="price">$89.99</div>
+      <div class="button-group">
+        <button class="buy-button" onclick="buyNow(10)">Buy</button>
+        
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img Id="product12" src="img/Cufflinks.jpg" alt="Cufflinks" />
+      <h3>Classic Cufflinks</h3>
+      <p>Elegant cufflinks for formal wear.</p>
+      <div style=" padding-bottom: 30px;"class="price">$79.99</div>
+      <div class="button-group">
+        <button class="buy-button" onclick="buyNow(11)">Buy</button>
+
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img Id="product13" src="img/Backpack.webp" alt="Travel Backpack" />
+      <h3>Travel Backpack</h3>
+      <p>Durable and spacious backpack for travel.</p>
+      <div style=" padding-bottom: 30px;"class="price">$129.99</div>
+      <div class="button-group">
+        <button class="buy-button" onclick="buyNow(12)">Buy</button>
+
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img Id="product14" src="img/RetroSunglasses.webp" alt="Retro Sunglasses" />
+      <h3>Retro Sunglasses</h3>
+      <p>Classic style sunglasses with UV protection.</p>
+      <div style=" padding-bottom: 30px;"class="price">$159.99</div>
+      <div class="button-group">
+        <button class="buy-button" onclick="buyNow(13)">Buy</button>
+       
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img Id="product15" src="img/men.webp" alt="Men's metal necklace" />
+      <h3>Men's Metal Necklace</h3>
+      <p>Dynamic Retail Global Men's Metal Necklace.</p>
+      <div style=" padding-bottom: 30px;"class="price">$189.99</div>
+      <div class="button-group">
+        <button class="buy-button" onclick="buyNow(14)">Buy</button>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Accessory Store. All rights reserved.
+  </footer>
+  <script>
+  function addToCart(id) {
+   const product = [
+    { id: 0, image: 'img/ring.png', title: 'Diamond Ring', price: 999.99 },
+    { id: 1, image: 'img/watch.jpg', title: 'Smart Watch', price: 799.99 },
+    { id: 2, image: 'img/eye.jpg', title: 'Sunglasses', price: 458.00 },
+    { id: 3, image: 'img/braclet.avif', title: 'Bracelet', price: 890.99 },
+    { id: 4, image: 'img/neckles.jpeg', title: 'Elegant Necklace', price: 199.99 },
+    { id: 5, image: 'img/earing.jpeg', title: 'Stylish Earrings', price: 199.99 },
+    { id: 6, image: 'img/cap.jpeg', title: 'Fashion Hat', price: 49.99 },
+    { id: 7, image: 'img/silk.jpeg', title: 'Silk Scarf', price: 69.99 },
+    { id: 8, image: 'img/belt.webp', title: 'Leather Belt', price:59.99 },
+    { id: 9, image: 'img/gloves.webp', title: 'Winter Gloves', price: 39.99},
+    { id: 10, image: 'img/wallet.webp', title: 'Leather Wallet', price: 89.99 },
+    { id: 11, image: 'img/Cufflinks.jpg', title: 'Cufflinks', price: 79.99 },
+    { id: 12, image: 'img/Backpack.webp', title: 'Travel Backpack', price: 129.99 },
+    { id: 13, image: 'img/RetroSunglasses.webp', title: 'Retro Sunglasses', price: 159.99 },
+    { id: 14, image: 'img/men.webp', title: 'Mens metal necklace', price:189.99 },
+  ];
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(product.find(p => p.id === id));
+  localStorage.setItem("cart", JSON.stringify(cart));
+  window.location.href = "cart.html";
+}
+// function changeImage(id, newSrc, originalSrc) {
+  //var imgElement = document.getElementById(id);
+  //imgElement.src = (imgElement.src.includes(newSrc)) ? originalSrc : newSrc;
+//}
+window.onload = function () {
+  const productImages = [
+    document.getElementById('product1'),
+    document.getElementById('product2'),
+    document.getElementById('product3'),
+    document.getElementById('product4'),
+    document.getElementById('product5'),
+    document.getElementById('product6'),
+    document.getElementById('product7'),
+    document.getElementById('product8'),
+    document.getElementById('product9'),
+    document.getElementById('product10'),
+    document.getElementById('product11'),
+    document.getElementById('product12'),
+    document.getElementById('product13'),
+    document.getElementById('product14'),
+    document.getElementById('product15')
+  ];
+
+  const imageGroups = [
+    ['img/rg1.jpg','img/rg2.jpg','img/rg3.jpg','img/ring.png'],
+    ['img/pexels-pixabay-280250.jpg', 'img/Luxury watches for men.jpeg', 'img/wh4.webp', 'img/watch.jpg'],
+    ['img/sun2.jpg', 'img/sun1.jpeg', 'img/s3.webp', 'img/eye.jpg'],
+    ['img/B2.webp', 'img/B3.avif', 'img/B1.webp', 'img/braclet.avif'],
+    ['img/n44.webp', 'img/n33.webp', 'img/n22.jpg', 'img/neckles.jpeg'],
+    ['img/ear1.jpg', 'img/ear2.webp', 'img/ear3.avif', 'img/earing.jpeg'],
+    ['img/h222.jpg', 'img/h333.webp', 'img/h111.jpg', 'img/cap.jpeg'],
+    ['img/scarf3.jpg', 'img/scarf2.jpg', 'img/scarf1.jpg', 'img/silk.jpeg'],
+    ['img/belt2.webp', 'img/belt3.jpg', 'img/belt4.webp', 'img/belt.webp'],
+    ['img/g3.webp', 'img/WTACTFUL Touch Screen Military Tactical Gloves Full Finger Airsoft Paintball Outdoor Army Gear.jpeg', 'img/g1.avif', 'img/gloves.webp'],
+    ['img/walet2.avif', 'img/walet1.jpg', 'img/wallet.webp', 'img/walet3.jpg'],
+    ['img/c1.jpeg', 'img/c3.webp', 'img/Cufflinks.jpg', 'img/c2.jpeg'],
+    ['img/t1.jpg', 'img/t2.webp', 'img/t3.webp', 'img/Backpack.webp'],
+    ['img/s2.webp', 'img/s1.webp', 'img/RetroSunglasses.webp', 'img/s3.webp'],
+    ['img/mn3.jpg', 'img/mn1.webp', 'img/men.webp', 'img/mn2.jpg']
+  ];
+
+  let currentIndex = 0;
+
+  setInterval(function () {
+    productImages.forEach((imgElement, i) => {
+      if (!imgElement) return; // skip if image is missing
+
+      imgElement.style.opacity = 0.3;
+
+      setTimeout(() => {
+        const group = imageGroups[i];
+        imgElement.src = group[currentIndex % group.length];
+        imgElement.style.opacity = 1;
+      }, 50);
+    });
+
+    currentIndex++;
+  }, 3000);
+};
+ // Select Buy Now buttons first
+  const buyButtons = document.querySelectorAll('.buy-button');
+
+  buyButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.product-card');
+      const img = card.querySelector('img').src;
+      const title = card.querySelector('h3').innerText;
+      const price = card.querySelector('.price').innerText;
+
+      // Store Buy Now items separately
+      const existingOrderItems = JSON.parse(localStorage.getItem('orderItems')) || [];
+
+      existingOrderItems.push({ img, title, price, quantity: 1 });
+
+      localStorage.setItem('orderItems', JSON.stringify(existingOrderItems));
+
+      // Go to order.html
+      window.location.href = 'order.html';
+    });
+  });
+
+  // Add to Cart buttons
+  const buttons = document.querySelectorAll('.add-to-cart');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.product-card');
+      const img = card.querySelector('img').src;
+      const title = card.querySelector('h3').innerText;
+      const price = card.querySelector('.price').innerText;
+
+      // Retrieve existing cart or start a new one
+      const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Add new item
+      existingCart.push({ img, title, price });
+
+      // Save back to localStorage
+      localStorage.setItem('cart', JSON.stringify(existingCart));
+
+      // Redirect to cart.html
+      window.location.href = 'cart.html';
+    });
+  });
+</script> 
+</body>
+</html>

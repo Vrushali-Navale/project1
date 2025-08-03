@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accessories Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    @keyframes backgroundShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+    }
+    body {
+      background: linear-gradient(270deg, #fbecf1, #e5fcf3, #efdee7, #dbf0e1, #d1bfd6, #f1d0e4, #d2f0f1);
+  background-size: 600% 600%;
+  animation: backgroundShift 20s ease infinite;
+      color: #333;
+      line-height: 1.6;
+    }
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: #4a90e2;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      color: #222;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+      display: block;
+    }
+    .product-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+    }
+    .product-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+    .product-content p {
+      flex: 1;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #666;
+    }
+    .price {
+      font-weight: bold;
+      color: #e94e77;
+      font-size: 1.1rem;
+    }
+    footer {
+      background-color: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 50px;
+    }
+     .button-group {
+      display: flex;
+      gap: 10px; /* space between buttons */
+    }
+
+    .buy-button,
+    .add-to-cart {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      /*text-transform: uppercase; */
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-button {
+      background-color: #e94e77; /* green */
+      color: white;
+    }
+
+   .buy-button:hover {
+      background-color: #bb6707;
+    }
+
+   .add-to-cart {
+     background-color: #1c75db;
+     display: flex;
+     align-items: center;
+     gap: 6px;
+     color: white;
+    }
+
+    .add-to-cart:hover {
+      background-color: #4a90e2;
+    }
+
+  </style>
+</head>
+<body>
+  <button onclick="history.back()"><img src="img/backarrow.webp" alt="" height="20px" width="20px"></button>
+
+  <div class="container">
+    <h2>Featured Accessories</h2>
+    <div class="products">
+      <!-- Sixteen cards for example; ensure width and height attributes -->
+      <div class="product-card">
+        <img src="img/ey.jpg" alt="Square Computer Glasses" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3>Square Computer Glasses</h3>
+          <div class="price">₹426</div>
+           <div class="button-group">
+            <button class="buy-button">Buy</button>
+          
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/ey1.jpg" alt="Sunglasses" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3> Sunglasses</h3>
+          <div class="price">₹711</div>
+           <div class="button-group">
+            <button class="buy-button">Buy</button>
+         
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/ey33.jpg" alt="Anti Glare Reading Glasses" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Anti Glare Reading Glasses</h3>
+          <div class="price">₹438</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+         
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/ey3.jpg" alt="Hexagon Shape Blue Glasses" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Hexagon Shape Blue Glasses</h3>
+          <div class="price"> ₹699</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+         
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/ey4.jpg" alt="HASHTAG EYEWEAR Stylish Square Sunglasses" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>HASHTAG EYEWEAR Stylish Square Sunglasses</h3>
+          <div class="price"> ₹499</div>
+           <div class="button-group">
+            <button class="buy-button">Buy</button>
+    
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/ey5.jpg" alt=" HASHTAG EYEWEAR Stylish Square Sunglasses" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>HASHTAG EYEWEAR Sunglasses</h3>
+          <div class="price"> ₹449</div>
+           <div class="button-group">
+            <button class="buy-button">Buy</button>
+      
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/ey6.jpg" alt="UV Protected Sunglasses  " loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3> UV Protected Sunglasses </h3>
+          <div class="price">₹499</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+  
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/ey7.jpg" alt=" Zero Power Blue Light" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Zero Power Blue Light</h3>
+          <div class="price">-50% ₹749</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/ey8.jpg" alt=" Eyewear Zero Power UV Protection Glasses" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3> Eyewear Zero Power UV Protection Glasses</h3>
+          <div class="price"> ₹749</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/ey9.jpg" alt="Retro Eyewear," loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Retro Eyewear,</h3>
+          <div class="price">₹597 </div> <div class="button-group">
+            <button class="buy-button">Buy</button>
+          
+          </div>
+          </div>
+      </div>
+      <div class="product-card">
+        <img src="img/ey10.jpg" alt=" UV 400 Protection Lens Sunglass" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3> UV 400 Protection Lens Sunglass</h3>
+          <div class="price">₹889</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/ey12.jpg" alt="HASHTAG EYEWEAR Stylish Sunglasses " loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>HASHTAG EYEWEAR Stylish Sunglasses </h3>
+          <div class="price"> ₹499</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/ey11.jpg" alt="HASHTAG Full Rim " loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>HASHTAG Full Rim</h3>
+          <div class="price">₹899</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/ey13.jpg" alt="FEISEDY Oversized Sunglasses" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3>Dervin Blue Light Blocking </h3>
+          <div class="price"> ₹599</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/ey14.jpg" alt="Dervin Blue Light Blocking " loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Hidesign EE MOROCCO W3 RF</h3>
+          <div class="price"> ₹294</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/ey15.jpg" alt="ROYAL SON Oversized Square" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3>ROYAL SON Oversized Square</h3>
+          <div class="price"> ₹699</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>© Your Brand 2025</footer>
+  <script>
+  // Select Buy Now buttons first
+  const buyButtons = document.querySelectorAll('.buy-button');
+
+  buyButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.product-card');
+      const img = card.querySelector('img').src;
+      const title = card.querySelector('h3').innerText;
+      const price = card.querySelector('.price').innerText;
+
+      // Store Buy Now items separately
+      const existingOrderItems = JSON.parse(localStorage.getItem('orderItems')) || [];
+
+      existingOrderItems.push({ img, title, price, quantity: 1 });
+
+      localStorage.setItem('orderItems', JSON.stringify(existingOrderItems));
+
+      // Go to order.html
+      window.location.href = 'order.html';
+    });
+  });
+
+  // Add to Cart buttons
+  const buttons = document.querySelectorAll('.add-to-cart');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.product-card');
+      const img = card.querySelector('img').src;
+      const title = card.querySelector('h3').innerText;
+      const price = card.querySelector('.price').innerText;
+
+      // Retrieve existing cart or start a new one
+      const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Add new item
+      existingCart.push({ img, title, price });
+
+      // Save back to localStorage
+      localStorage.setItem('cart', JSON.stringify(existingCart));
+
+      // Redirect to cart.html
+      window.location.href = 'cart.html';
+    });
+  });
+</script>
+</body>
+</html>

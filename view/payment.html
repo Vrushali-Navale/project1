@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Simple Payment Form</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #09bbf6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+  }
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  label {
+    display: block;
+    margin-bottom: 6px;
+    color: #555;
+    font-weight: 600;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="month"] {
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 18px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="month"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  button {
+    width: 100%;
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background: #0056b3;
+  }
+  .thankyou-message {
+    text-align: center;
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+  }
+  .thankyou-message h3 {
+    color: #28a745;
+    margin-bottom: 20px;
+  }
+  .thankyou-message button {
+    width: auto;
+    padding: 10px 24px;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+</style>
+    
+</head>
+<body>
+
+<div class="container">
+<form id="payment-form" method="POST" action="/payment">
+    <h2>Payment Here</h2>
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required placeholder="Sam Sura" />
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required placeholder="sam12@gmail.com" /> 
+
+       <label>Accepted Cards</label>
+    <div class="card-logos">
+    <img src="img/visa.png" alt="Visa" width="60" height="30">
+    <img src="img/mastercard.png" alt="MasterCard"  width="60" height="30">
+    <img src="img/a.png" alt="American Express"  width="60" height="40">
+    </div>
+
+    <label for="card">Card Number</label>
+    <input type="text" id="card" name="card" required placeholder="1234 5678 9012 3456" 
+           inputmode="numeric" pattern="[0-9\s]{13,19}" title="Please enter a valid card number" />
+
+    <label for="expiry">Expiry Date</label>
+    <input type="date" id="expiry" name="expiry" required />
+
+    <label for="cvv">CVV</label>
+    <input type="text" id="cvv" name="cvv" required placeholder="000" 
+           inputmode="numeric" pattern="\d{3,4}" maxlength="4" title="3 or 4 digit CVV" />
+
+    <button type="submit">Pay Now</button>
+</form>
+
+  <div class="thankyou-message" id="thankyou-message">
+    <h3>Payment Successful!</h3>
+     <button id="home-btn">Go to Home Page</button>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('payment-form');
+  const thankyouMessage = document.getElementById('thankyou-message');
+  const homeBtn = document.getElementById('home-btn');
+
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const payload = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      card: formData.get('card'),
+      expiry: formData.get('expiry'),
+      cvv: formData.get('cvv'),
+    };
+
+    try {
+      const response = await fetch('/payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(payload),
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        thankyouMessage.style.display = 'block';
+      } else {
+        alert('Payment failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting payment:', error);
+      alert('An error occurred. Please try again.');
+    }
+  });
+
+  homeBtn.addEventListener('click', () => {
+    window.location.href = 'Home.html';
+  });
+</script>
+
+</body>
+</html>

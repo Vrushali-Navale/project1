@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accessories Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+   @keyframes backgroundShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+    body {
+      background: linear-gradient(270deg, #fbecf1, #e5fcf3, #efdee7, #dbf0e1, #d1bfd6, #f1d0e4, #d2f0f1);
+  background-size: 600% 600%;
+  animation: backgroundShift 20s ease infinite;
+      color: #333;
+      line-height: 1.6;
+    }
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: #4a90e2;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      color: #222;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+      display: block;
+    }
+    .product-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+    }
+    .product-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+    .product-content p {
+      flex: 1;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #666;
+    }
+    .price {
+      font-weight: bold;
+      color: #e94e77;
+      font-size: 1.1rem;
+    }
+    footer {
+      background-color: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 50px;
+    }
+    .button-group {
+      display: flex;
+      gap: 10px; /* space between buttons */
+    }
+
+    .buy-button,
+    .add-to-cart {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      /*text-transform: uppercase; */
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-button {
+      background-color: #e94e77; /* green */
+      color: white;
+    }
+
+   .buy-button:hover {
+      background-color: #bb6707;
+    }
+
+   .add-to-cart {
+     background-color: #1c75db;
+     display: flex;
+     align-items: center;
+     gap: 6px;
+     color: white;
+    }
+
+    .add-to-cart:hover {
+      background-color: #4a90e2;
+    }
+
+  </style>
+</head>
+<body>
+  <button onclick="history.back()"><img src="img/backarrow.webp" alt="" height="20px" width="20px"></button>
+  <div class="container">
+    <h2>Featured Accessories</h2>
+    <div class="products">
+      <!-- Sixteen cards for example; ensure width and height attributes -->
+      <div class="product-card">
+        <img src="img/j2.jpg" alt="Girls Embracing Hearts-in-Love" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Girls Embracing Hearts-in-Love</h3>
+          <div class="price">₹289</div>
+           <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+          </div>
+      </div>
+      <div class="product-card">
+        <img src="img/j3.jpg" alt=" Lariat Pendant " loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3> Lariat Pendant </h3>
+          <div class="price"> ₹349</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+          </div>
+      </div>
+      <div class="product-card">
+        <img src="img/j4.jpg" alt=" Lariat Pendant Rhinestones" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3> Lariat Pendant Rhinestones</h3>
+          <div class="price">₹399</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/e.jpg" alt="White Flower Hoop Earrings " loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>White Flower Hoop Earrings </h3>
+          <div class="price">₹292</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/e1.jpg" alt="Flower Hoop Earrings" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Flower Hoop Earrings</h3>
+          <div class="price">₹254</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/e3.jpg" alt="Earrings" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Copper Zircon Bali Earrings</h3>
+          <div class="price"> ₹398</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/e4.jpg" alt="American Diamond Stud Earrings" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>American Diamond Stud Earrings</h3>
+          <div class="price"> ₹389</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/j6.jpg" alt="Stylish Western Necklace" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Stylish Western Necklace</h3>
+          <div class="price">₹294</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/e6.jpg" alt="Multilayer Crystal Charm Beaded Bracelet" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Multilayer Crystal Charm Beaded Bracelet</h3>
+          <div class="price"> ₹293</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/br.jpg" alt="Rose Gold Plated Crystal Bracelet" loading="lazy" width="300" height="180" />
+        <div class="Rose Gold Plated Crystal Bracelet">
+          <h3>Stylish Western Necklace</h3>
+          <div class="price"> ₹234</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/br1.jpg" alt="Gold Plated Bangle Bracelet" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Gold Plated Bangle Bracelet</h3>
+          <div class="price">₹269</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/br2.jpg" alt="Stylish Bracelet" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Stylish Bracelet</h3>
+          <div class="price">₹279</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/br3.jpg" alt="Cuff Bangle Bracelet" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Cuff Bangle Bracelet</h3>
+          <div class="price">₹198</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/br4.jpg" alt="Tennis Bracelet" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Stylish Tennis Bracelet</h3>
+          <div class="price"> ₹294</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/br5.jpg" alt=" Gold Plated Charm Bracelete" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Stylish  Gold Plated Charm Bracelet</h3>
+          <div class="price">₹259</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/rg.jpg" alt="Butterfly Ring " loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Butterfly Ring </h3>
+          <div class="price"> ₹239</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/rg1.jpg" alt="Maple Leaf Moonstone Ring" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Maple Leaf Moonstone Ring</h3>
+          <div class="price"> ₹299</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+           
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/rg2.jpg" alt="Leaf Ring" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Stylish Leaf Ring</h3>
+          <div class="price"> ₹272</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+         
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/rg3.jpg" alt="Zirconia Finger Ring" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Zirconia Finger Ring</h3>
+          <div class="price"> ₹799</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+       
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/e5.jpg" alt="Diamond" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Diamond Embracing</h3>
+          <div class="price"> ₹368</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+         
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/j6.jpg" alt="Stylish Western Necklace" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Stylish Western Necklace</h3>
+          <div class="price">₹294</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+        
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/j9.jpg" alt="Rose Gold Pendant" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3>Rose Rose Gold Pendant</h3>
+          <div class="price">₹349</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+      
+          </div>
+      </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bep.jpg" alt="Saree Brooch for Dress" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3> Saree Brooch for Dress</h3>
+          <div class="price">₹389</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+        </div>
+          </div>
+      </div><div class="product-card">
+        <img src="img/bp.jpg" alt=" Scarf Clip Jewelry" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3> Scarf Clip Jewelry</h3>
+          <div class="price"> ₹596</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+          </div>
+      </div><div class="product-card">
+        <img src="img/bp2.jpg" alt="U-shape Ring" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3>U-shape Ring</h3>
+          <div class="price">₹878</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+
+          </div>
+          </div>
+      </div><div class="product-card">
+        <img src="img/bp1.jpg" alt="Coat Brooch Pin" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3> Coat Brooch Pin</h3>
+          <div class="price"> ₹299</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+          </div>
+      </div><div class="product-card">
+        <img src="img/bp3.jpg" alt="Bollywood Intricately" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3> Bollywood Intricately</h3>
+          <div class="price"> ₹349</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+          </div>
+      </div><div class="product-card">
+        <img src="img/bp4.jpg" alt=" Deer Brooch" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3> Deer Brooch</h3>
+          <div class="price">₹199</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+          </div>
+      </div><div class="product-card">
+        <img src="img/an.jpg" alt=" Butterfly Anklet" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3>-Butterfly Anklet</h3>
+          <div class="price"> ₹199</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+          </div>
+      </div><div class="product-card">
+        <img src="img/an1.jpg" alt="  Black Bead Anklet" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3> Black Bead Anklet</h3>
+          <div class="price"> ₹1,580</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+          </div>
+      </div><div class="product-card">
+        <img src="img/an2.jpg" alt="  Silver Anklet Payal" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3> Silver Anklet Payal</h3>
+          <div class="price"> ₹1,567</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+          </div>
+      </div><div class="product-card">
+        <img src="img/an4.jpg" alt=" Rings Anklet Bracelet Sets" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3> Rings Anklet Bracelet Sets</h3>
+          <div class="price"> ₹2,133</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <footer>© Your Brand 2025</footer>
+  <script>
+  // Select Buy Now buttons first
+  const buyButtons = document.querySelectorAll('.buy-button');
+
+  buyButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.product-card');
+      const img = card.querySelector('img').src;
+      const title = card.querySelector('h3').innerText;
+      const price = card.querySelector('.price').innerText;
+
+      // Store Buy Now items separately
+      const existingOrderItems = JSON.parse(localStorage.getItem('orderItems')) || [];
+
+      existingOrderItems.push({ img, title, price, quantity: 1 });
+
+      localStorage.setItem('orderItems', JSON.stringify(existingOrderItems));
+
+      // Go to order.html
+      window.location.href = 'order.html';
+    });
+  });
+
+  // Add to Cart buttons
+  const buttons = document.querySelectorAll('.add-to-cart');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.product-card');
+      const img = card.querySelector('img').src;
+      const title = card.querySelector('h3').innerText;
+      const price = card.querySelector('.price').innerText;
+
+      // Retrieve existing cart or start a new one
+      const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Add new item
+      existingCart.push({ img, title, price });
+
+      // Save back to localStorage
+      localStorage.setItem('cart', JSON.stringify(existingCart));
+
+      // Redirect to cart.html
+      window.location.href = 'cart.html';
+    });
+  });
+</script>
+</body>
+</html>

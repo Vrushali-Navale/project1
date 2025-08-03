@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accessories Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    @keyframes backgroundShift {
+     0% { background-position: 0% 50%; }
+     50% { background-position: 100% 50%; }
+     100% { background-position: 0% 50%; }
+    }
+    body {
+      background: linear-gradient(270deg, #fbecf1, #e5fcf3, #efdee7, #dbf0e1, #d1bfd6, #f1d0e4, #d2f0f1);
+      background-size: 600% 600%;
+      animation: backgroundShift 20s ease infinite;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: #4a90e2;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      color: #222;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+      display: block;
+    }
+    .product-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+    }
+    .product-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+    .product-content p {
+      flex: 1;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #666;
+    }
+    .price {
+      font-weight: bold;
+      color: #e94e77;
+      font-size: 1.1rem;
+    }
+    footer {
+      background-color: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 50px;
+    }
+     .button-group {
+      display: flex;
+      gap: 10px; /* space between buttons */
+    }
+
+    .buy-button,
+    .add-to-cart {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      /*text-transform: uppercase; */
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-button {
+      background-color: #e94e77; /* green */
+      color: white;
+    }
+
+   .buy-button:hover {
+      background-color: #bb6707;
+    }
+
+   .add-to-cart {
+     background-color: #1c75db;
+     display: flex;
+     align-items: center;
+     gap: 6px;
+     color: white;
+    }
+
+    .add-to-cart:hover {
+      background-color: #4a90e2;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="history.back()"><img src="img/backarrow.webp" alt="" height="20px" width="20px"></button>
+
+  <div class="container">
+    <h2>Featured Accessories</h2>
+    <div class="products">
+      <!-- Sixteen cards for example; ensure width and height attributes -->
+       <div class="product-card">
+        <img src="img/bg4.jpg" alt="Beautiful You Women's Handbag" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Beautiful You Women's Handbag</h3>
+          <div class="price">₹299</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg5.jpg" alt=" Framed Clutch" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3> Framed Clutch</h3>
+          <div class="price">₹1,249</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg6.jpg" alt=" Bangor Handle Framed Clutch " loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3> Bangor Handle Framed Clutch </h3>
+          <div class="price">₹1,249</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+        
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg7.jpg" alt=" Clutch" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3> Clutch</h3>
+          <div class="price">₹749</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg16.jpg" alt="ady Quinton Stylish Sling Bag " loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3> ady Quinton Stylish Sling Bag </h3>
+          <div class="price"> ₹449
+          </div> 
+           <div class="button-group">
+            <button class="buy-button">Buy</button>
+      
+          </div>
+
+        </div>
+      </div><div class="product-card">
+        <img src="img/bg17.jpg" alt="LIKE STYLE PU Women's Sling Bag" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3>LIKE STYLE PU Women's Sling Bag</h3>
+          <div class="price">₹499</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+         
+          </div>
+        </div>
+      </div><div class="product-card">
+        <img src="img/bg18.jpg" alt=" Crossbody Bags" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3>UCrossbody Bags</h3>
+          <div class="price"> ₹449</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+         
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg112.jpg" alt="Caprese NARS SB Medium" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3>Caprese NARS SB Medium</h3>
+          <div class="price"> ₹999</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+        
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg.jpg" alt="Sling Handbag" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3>Sling Handbage</h3>
+          <div class="price"> ₹225</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg1.jpg" alt=" Stylish PU Leather Bag" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3> Stylish PU Leather Bag</h3>
+          <div class="price"> ₹1,249</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg2.jpg" alt="PU Leather Combo Hand Bag t" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>PU Leather Combo Hand Bag </h3>
+          <div class="price"> ₹293</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+         
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg3.jpg" alt="Rose Gold Plated Crystal Bracelet" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>LIKE STYLE Hand Bags</h3>
+          <div class="price"> ₹489</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+       
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg111.jpg" alt=" COSMO LUXERA" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>COSMO LUXERA</h3>
+          <div class="price"> ₹1,600</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+    
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg10.webp" alt="PALAY" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>PALAY</h3>
+          <div class="price"> ₹609 </div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg9.jpg" alt="Giordano Sling Bag" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Giordano Sling Bag</h3>
+          <div class="price"> ₹1,739</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg11.jpg" alt="Backpack Sling Bag " loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Backpack Sling Bag </h3>
+          <div class="price"> ₹499</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg12.jpg" alt="Ladies Purse Handbag" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Ladies Purse Handbag</h3>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg19.jpg" alt="Women's Sling Bag" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3> Women's Sling Bag</h3>
+          <div class="price"> ₹1,245</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg14.jpg" alt="Hidesign EE MOROCCO W3 RFStylish Western Necklace" loading="lazy" width="300" height="180" />
+        <div class="product-content">
+          <h3>Hidesign EE MOROCCO W3 RF</h3>
+          <div class="price"> ₹294</div>
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="img/bg15.jpg" alt=" Quilted Cross Body Sling Bag" loading="lazy" width="300" height="200" />
+        <div class="product-content">
+          <h3> Quilted Cross Body Sling Bag</h3>
+          <div class="price"> ₹698</div> 
+          <div class="button-group">
+            <button class="buy-button">Buy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>© Your Brand 2025</footer>
+  <script>
+  // Select Buy Now buttons first
+  const buyButtons = document.querySelectorAll('.buy-button');
+
+  buyButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.product-card');
+      const img = card.querySelector('img').src;
+      const title = card.querySelector('h3').innerText;
+      const price = card.querySelector('.price').innerText;
+
+      // Store Buy Now items separately
+      const existingOrderItems = JSON.parse(localStorage.getItem('orderItems')) || [];
+
+      existingOrderItems.push({ img, title, price, quantity: 1 });
+
+      localStorage.setItem('orderItems', JSON.stringify(existingOrderItems));
+
+      // Go to order.html
+      window.location.href = 'order.html';
+    });
+  });
+
+  // Add to Cart buttons
+  const buttons = document.querySelectorAll('.add-to-cart');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.product-card');
+      const img = card.querySelector('img').src;
+      const title = card.querySelector('h3').innerText;
+      const price = card.querySelector('.price').innerText;
+
+      // Retrieve existing cart or start a new one
+      const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Add new item
+      existingCart.push({ img, title, price });
+
+      // Save back to localStorage
+      localStorage.setItem('cart', JSON.stringify(existingCart));
+
+      // Redirect to cart.html
+      window.location.href = 'cart.html';
+    });
+  });
+</script>
+</body>
+</html>
